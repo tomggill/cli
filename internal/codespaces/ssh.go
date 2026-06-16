@@ -71,6 +71,7 @@ func newSSHCommand(ctx context.Context, port int, dst string, cmdArgs []string, 
 
 	cmdArgs = append(cmdArgs, connArgs...)
 	cmdArgs = append(cmdArgs, "-C") // Compression
+	cmdArgs = append(cmdArgs, "--") // End of ssh flags
 	cmdArgs = append(cmdArgs, dst)  // user@host
 
 	if command != nil {
